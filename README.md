@@ -1,2 +1,3 @@
-# redux-series.redux-saga-demo
-Demo of Redux saga, which was included in Redux workshop series
+# redux-series.es6-generator-demo
+
+Demo of es6 generator, which was included in Redux workshop series
