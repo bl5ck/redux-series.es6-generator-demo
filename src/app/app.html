@@ -1,0 +1,50 @@
+<div class="app-container container-fluid">
+  <div class="col-sm-3 col-sm-offset-4 frame">
+    <ul class="messages"
+        data-bind="foreach: messagesOfUsers()">
+      <li class="message">
+        <div data-bind="attr: { class: 'macro ' + (!user.isCurrent ? 'msj': 'msj-rta') }">
+          <!-- ko ifnot: user.isCurrent-->
+          <div class="avatar">
+            <span class="name"
+                  data-bind="text: user.name"></span>
+            <img class="img-circle"
+                 data-bind="attr: { src: user.avatar }" />
+          </div>
+          <!-- /ko -->
+          <div class="text"
+               data-bind="attr: { class: 'text ' + (!user.isCurrent ?  'text-l': 'text-r') }">
+            <p data-bind="text: content"></p>
+            <p>
+              <small data-bind="text: fuzzy"></small>
+            </p>
+          </div>
+          <!-- ko if: user.isCurrent -->
+          <div class="avatar">
+            <span class="name"
+                  data-bind="text: user.name"></span>
+            <img class="img-circle"
+                 data-bind="attr: { src: user.avatar }" />
+          </div>
+          <!-- /ko -->
+        </div>
+      </li>
+    </ul>
+    <div class="chat">
+      <div class="msj-rta macro">
+        <div class="text text-r"
+             style="background:whitesmoke !important">
+          <input class="mytext"
+                 placeholder="Type a message"
+                 data-bind="value: typing"
+                 readonly/>
+        </div>
+
+      </div>
+      <div class="send-message"
+           data-bind="click: send">
+        <span class="glyphicon glyphicon-share-alt"></span>
+      </div>
+    </div>
+  </div>
+</div>
